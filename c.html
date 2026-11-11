@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sri Palaniyandavar Physiotherapy Clinic - Personalized physiotherapy and rehabilitation care.">
+<title>Sri Palaniyandavar Physiotherapy Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --navy:#102f36;
+  --green:#168c79;
+  --mint:#e6f5ef;
+  --cream:#f8faf5;
+  --text:#53666a;
+  --white:#fff;
+}
+* {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body {font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--cream);overflow-x:hidden}
+a {text-decoration:none;color:inherit}
+button,input,select,textarea {font:inherit}
+.container {width:min(1160px,90%);margin:auto}
+header {background:#ffffffed;position:sticky;top:0;z-index:1000;box-shadow:0 3px 20px #102f360f}
+.navbar {height:84px;display:flex;justify-content:space-between;align-items:center}
+.logo {display:flex;align-items:center;gap:12px}
+.logo-icon {width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:white;background:var(--green);font-size:22px}
+.logo h2 {font-family:Manrope,sans-serif;font-size:17px;font-weight:800;line-height:1.2}
+.logo small {color:var(--green);font-size:10px;letter-spacing:2px;font-weight:700}
+.nav-links {display:flex;align-items:center;gap:30px;list-style:none}
+.nav-links a {font-size:13px;font-weight:700;transition:.3s}
+.nav-links a:hover {color:var(--green)}
+.nav-btn,.primary-btn {background:var(--green);color:white;padding:14px 23px;border-radius:9px;font-weight:700;font-size:13px;display:inline-block;border:0;cursor:pointer;transition:.3s}
+.nav-btn:hover,.primary-btn:hover {background:var(--navy);transform:translateY(-3px)}
+.menu-toggle {display:none;font-size:23px;cursor:pointer}
+
+.hero {padding:90px 0 85px;background:radial-gradient(circle at 90% 10%,#d5eee5 0,transparent 32%),linear-gradient(120deg,#f8faf5,#eaf5ef)}
+.hero-grid {display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:65px}
+.eyebrow {color:var(--green);font-size:11px;letter-spacing:3px;font-weight:800;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.eyebrow:before {content:"";width:27px;height:2px;background:var(--green)}
+.hero h1 {font-family:Manrope,sans-serif;font-size:clamp(40px,5vw,65px);line-height:1.13;letter-spacing:-2.5px;margin-bottom:23px}
+.hero h1 span {color:var(--green)}
+.hero p {color:var(--text);line-height:1.9;font-size:15px;max-width:500px;margin-bottom:30px}
+.hero-buttons {display:flex;align-items:center;gap:17px;flex-wrap:wrap}
+.secondary-btn {border:1px solid #c9ded5;border-radius:9px;padding:13px 22px;font-size:13px;font-weight:700}
+.hero-image {position:relative}
+.hero-image img {width:100%;height:480px;object-fit:cover;border-radius:45% 45% 18px 18px;box-shadow:0 25px 55px #102f3621}
+.floating-card {position:absolute;bottom:30px;left:-35px;background:white;border-radius:15px;padding:18px 22px;box-shadow:0 12px 35px #102f361f;display:flex;align-items:center;gap:13px}
+.floating-icon {width:43px;height:43px;background:var(--mint);color:var(--green);display:grid;place-items:center;border-radius:12px;font-size:20px}
+.floating-card strong {font-size:13px}
+.floating-card small {display:block;color:var(--text);margin-top:4px}
+
+.trust {background:var(--navy);padding:27px 0;color:white}
+.trust-grid {display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:20px}
+.trust-item {display:flex;align-items:center;justify-content:center;gap:13px}
+.trust-item i {color:#65d5b7;font-size:24px}
+.trust-item strong {font-size:13px}
+.trust-item small {display:block;color:#b3c7c7;margin-top:4px;font-size:11px}
+
+section {padding:95px 0}
+.section-heading {text-align:center;max-width:620px;margin:0 auto 50px}
+.section-heading .eyebrow {justify-content:center}
+.section-heading h2 {font-family:Manrope,sans-serif;font-size:clamp(30px,4vw,43px);letter-spacing:-1.5px;margin-bottom:15px}
+.section-heading p {color:var(--text);line-height:1.8;font-size:14px}
+
+.about-grid {display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about-image img {width:100%;height:420px;object-fit:cover;border-radius:20px}
+.about-content h2 {font-family:Manrope,sans-serif;font-size:39px;line-height:1.25;margin-bottom:20px}
+.about-content p {color:var(--text);line-height:1.9;font-size:14px;margin-bottom:17px}
+.about-points {display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:25px 0 30px}
+.about-point {display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700}
+.about-point i {color:var(--green);font-size:16px}
+
+.services,.testimonials {background:#edf5f0}
+.service-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card {background:white;padding:32px 27px;border-radius:15px;border:1px solid #e6eee9;transition:.35s}
+.service-card:hover {transform:translateY(-9px);box-shadow:0 18px 40px #102f3617;border-color:transparent}
+.service-icon {width:56px;height:56px;background:var(--mint);color:var(--green);display:grid;place-items:center;border-radius:15px;font-size:23px;margin-bottom:24px}
+.service-card h3 {font-family:Manrope,sans-serif;font-size:17px;margin-bottom:12px}
+.service-card p {font-size:13px;color:var(--text);line-height:1.8}
+
+.why-grid {display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.why-content h2 {font-family:Manrope,sans-serif;font-size:39px;line-height:1.3;margin-bottom:18px}
+.why-content>p {color:var(--text);font-size:14px;line-height:1.9;margin-bottom:28px}
+.why-list {display:grid;gap:20px}
+.why-item {display:flex;gap:16px;align-items:flex-start}
+.why-item i {background:var(--mint);color:var(--green);padding:13px;border-radius:12px;font-size:19px}
+.why-item h4 {font-size:14px;margin-bottom:6px}
+.why-item p {color:var(--text);font-size:12px;line-height:1.7}
+.why-image img {width:100%;height:490px;object-fit:cover;border-radius:20px}
+
+.appointment {background:var(--navy);color:white}
+.appointment-grid {display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:65px}
+.appointment-info h2 {font-family:Manrope,sans-serif;font-size:42px;line-height:1.25;margin-bottom:20px}
+.appointment-info h2 span {color:#6de0bc}
+.appointment-info>p {color:#bfd0d0;font-size:14px;line-height:1.9;margin-bottom:30px}
+.contact-line {display:flex;gap:15px;align-items:center;margin:20px 0}
+.contact-line i {color:#6de0bc;font-size:19px}
+.contact-line small {color:#afc6c4;display:block;margin-bottom:5px}
+.contact-line strong {font-size:13px}
+.appointment-form {background:white;color:var(--navy);padding:36px;border-radius:18px}
+.appointment-form h3 {font-family:Manrope,sans-serif;font-size:23px;margin-bottom:8px}
+.appointment-form>p {color:var(--text);font-size:12px;margin-bottom:25px}
+.form-grid {display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.form-group {display:flex;flex-direction:column;gap:8px;margin-bottom:17px}
+.form-group.full {grid-column:span 2}
+.form-group label {font-size:11px;font-weight:700}
+.form-group input,.form-group select,.form-group textarea {border:1px solid #dce7e1;background:#f9fbf9;border-radius:8px;padding:13px;outline:none;width:100%;color:var(--navy);font-size:12px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus {border-color:var(--green)}
+.form-group textarea {resize:vertical;min-height:85px}
+.appointment-form button {width:100%}
+
+.testimonial-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testimonial {background:white;padding:28px;border-radius:15px}
+.stars {color:#e5a93b;margin-bottom:18px;font-size:13px}
+.testimonial p {font-size:13px;color:var(--text);line-height:1.8;margin-bottom:20px}
+.testimonial strong {font-size:13px}
+
+.cta {padding:65px 0;text-align:center}
+.cta-inner {background:var(--mint);padding:55px 25px;border-radius:22px}
+.cta h2 {font-family:Manrope,sans-serif;font-size:35px;margin-bottom:15px}
+.cta p {color:var(--text);font-size:14px;margin-bottom:25px}
+
+footer {background:#0a242b;color:white;padding:65px 0 25px}
+.footer-grid {display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px;margin-bottom:45px}
+.footer-about p {color:#a9bdbd;font-size:12px;line-height:1.9;margin-top:18px;max-width:260px}
+footer h4 {font-size:14px;margin-bottom:20px}
+footer ul {list-style:none}
+footer li {color:#a9bdbd;font-size:12px;margin:13px 0}
+footer li a:hover {color:#65d5b7}
+.socials {display:flex;gap:12px;margin-top:22px}
+.socials a {width:35px;height:35px;border:1px solid #315057;display:grid;place-items:center;border-radius:50%}
+.socials a:hover {background:var(--green)}
+.copyright {text-align:center;border-top:1px solid #294149;padding-top:23px;color:#82999b;font-size:11px}
+
+.whatsapp {position:fixed;right:24px;bottom:24px;width:56px;height:56px;background:#20bf70;color:white;border-radius:50%;display:grid;place-items:center;font-size:28px;z-index:100;box-shadow:0 7px 20px #20bf7060}
+
+.reveal {opacity:0;transform:translateY(25px);transition:.7s ease}
+.reveal.visible {opacity:1;transform:translateY(0)}
+
+@media(max-width:900px) {
+ .nav-links {gap:16px}
+ .hero-grid,.about-grid,.why-grid,.appointment-grid {gap:35px}
+ .service-grid {grid-template-columns:repeat(2,1fr)}
+ .footer-grid {grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px) {
+ .navbar {height:72px}
+ .menu-toggle {display:block}
+ .nav-links {display:none;position:absolute;top:72px;left:0;width:100%;background:white;flex-direction:column;align-items:stretch;padding:22px 6%;gap:22px;box-shadow:0 12px 20px #00000012}
+ .nav-links.active {display:flex}
+ .nav-btn {text-align:center}
+ .hero {padding:60px 0}
+ .hero-grid,.about-grid,.why-grid,.appointment-grid {grid-template-columns:1fr}
+ .hero h1 {font-size:43px}
+ .hero-image {margin:15px 10px 0}
+ .hero-image img {height:370px}
+ .floating-card {left:-10px;bottom:15px}
+ .trust-grid {grid-template-columns:1fr}
+ .trust-item {justify-content:flex-start;padding-left:15%}
+ section {padding:70px 0}
+ .section-heading {margin-bottom:35px}
+ .about-image img {height:330px}
+ .about-content h2,.why-content h2 {font-size:32px}
+ .service-grid,.testimonial-grid {grid-template-columns:1fr}
+ .why-image img {height:350px}
+ .appointment-info h2 {font-size:35px}
+ .appointment-form {padding:24px 18px}
+ .form-grid {grid-template-columns:1fr}
+ .form-group.full {grid-column:span 1}
+ .cta h2 {font-size:27px}
+ .footer-grid {grid-template-columns:1fr 1fr;gap:30px 15px}
+}
+@media(max-width:380px) {
+ .footer-grid,.about-points {grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+<a href="#home" class="logo">
+<div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+<div>
+<h2>Sri Palaniyandavar</h2>
+<small>PHYSIOTHERAPY CLINIC</small>
+</div>
+</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About Us</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#why-us">Why Choose Us</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#appointment" class="nav-btn">Book Appointment</a></li>
+</ul>
+<div class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></div>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div class="hero-content reveal">
+<div class="eyebrow">WELCOME TO OUR CLINIC</div>
+<h1>Move Better.<br>Live <span>Healthier.</span></h1>
+<p>Your journey to a pain-free and active life starts here. Experience personalized physiotherapy care, expert guidance and rehabilitation focused on your recovery.</p>
+<div class="hero-buttons">
+<a href="#appointment" class="primary-btn">Book an Appointment <i class="fa-solid fa-arrow-right"></i></a>
+<a href="#services" class="secondary-btn">Explore Services</a>
+</div>
+</div>
+<div class="hero-image reveal">
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85" alt="Physiotherapy care">
+<div class="floating-card">
+<div class="floating-icon"><i class="fa-solid fa-hand-holding-medical"></i></div>
+<div><strong>Personalized Care</strong><small>Focused on your recovery</small></div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="trust">
+<div class="container trust-grid">
+<div class="trust-item"><i class="fa-solid fa-user-doctor"></i><div><strong>Professional Care</strong><small>Patient-focused treatment</small></div></div>
+<div class="trust-item"><i class="fa-solid fa-heart-pulse"></i><div><strong>Personalized Therapy</strong><small>Care tailored to your needs</small></div></div>
+<div class="trust-item"><i class="fa-solid fa-person-walking"></i><div><strong>Active Recovery</strong><small>Supporting better movement</small></div></div>
+</div>
+</div>
+
+<section id="about">
+<div class="container about-grid">
+<div class="about-image reveal">
+<img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=900&q=85" alt="Healthcare clinic">
+</div>
+<div class="about-content reveal">
+<div class="eyebrow">ABOUT OUR CLINIC</div>
+<h2>Helping You Get Back to the Life You Love.</h2>
+<p>At Sri Palaniyandavar Physiotherapy Clinic, we believe that better movement leads to a better life.</p>
+<p>We aim to provide individualized physiotherapy and rehabilitation care that helps patients improve mobility, manage pain and regain confidence in everyday activities.</p>
+<div class="about-points">
+<div class="about-point"><i class="fa-solid fa-circle-check"></i> Individualized Care</div>
+<div class="about-point"><i class="fa-solid fa-circle-check"></i> Patient Education</div>
+<div class="about-point"><i class="fa-solid fa-circle-check"></i> Recovery Support</div>
+<div class="about-point"><i class="fa-solid fa-circle-check"></i> Exercise Guidance</div>
+</div>
+<a href="#appointment" class="primary-btn">Consult With Us</a>
+</div>
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">WHAT WE OFFER</div>
+<h2>Our Physiotherapy Services</h2>
+<p>Personalized treatment approaches designed to support recovery, improve movement and help you return to daily activities.</p>
+</div>
+<div class="service-grid">
+<div class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-bone"></i></div><h3>Orthopedic Physiotherapy</h3><p>Support for joint pain, muscle injuries, back pain, neck pain and musculoskeletal conditions.</p></div>
+<div class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-brain"></i></div><h3>Neurological Rehabilitation</h3><p>Rehabilitation support for movement, balance and functional challenges following neurological conditions.</p></div>
+<div class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-person-walking"></i></div><h3>Sports Physiotherapy</h3><p>Injury rehabilitation and exercise guidance to support a safe return to sporting activities.</p></div>
+<div class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-person-cane"></i></div><h3>Geriatric Physiotherapy</h3><p>Movement, strength and balance support to help older adults maintain independence.</p></div>
+<div class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-person-pregnant"></i></div><h3>Women's Health Physiotherapy</h3><p>Individualized physiotherapy support for selected women's health and rehabilitation needs.</p></div>
+<div class="service-card reveal"><div class="service-icon"><i class="fa-solid fa-wheelchair"></i></div><h3>Post-Surgical Rehabilitation</h3><p>Guided rehabilitation to improve mobility and function after surgery, according to medical advice.</p></div>
+</div>
+</div>
+</section>
+
+<section id="why-us">
+<div class="container why-grid">
+<div class="why-content reveal">
+<div class="eyebrow">WHY CHOOSE US</div>
+<h2>Your Recovery Deserves Personal Attention.</h2>
+<p>Every person has a different recovery journey. We focus on understanding your needs and supporting your progress through individualized treatment and rehabilitation guidance.</p>
+<div class="why-list">
+<div class="why-item"><i class="fa-solid fa-clipboard-check"></i><div><h4>Individual Assessment</h4><p>Understanding your condition and movement goals before planning treatment.</p></div></div>
+<div class="why-item"><i class="fa-solid fa-user-doctor"></i><div><h4>Personalized Treatment</h4><p>Therapy approaches adapted to your condition and recovery needs.</p></div></div>
+<div class="why-item"><i class="fa-solid fa-dumbbell"></i><div><h4>Exercise & Rehabilitation</h4><p>Guidance to help improve strength, mobility and functional movement.</p></div></div>
+<div class="why-item"><i class="fa-solid fa-handshake-angle"></i><div><h4>Patient-Centered Approach</h4><p>Clear communication and support throughout your rehabilitation journey.</p></div></div>
+</div>
+</div>
+<div class="why-image reveal">
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1000&q=85" alt="Rehabilitation exercise">
+</div>
+</div>
+</section>
+
+<section class="appointment" id="appointment">
+<div class="container appointment-grid">
+<div class="appointment-info reveal">
+<div class="eyebrow">GET IN TOUCH</div>
+<h2>Take the First Step Towards a <span>Better You.</span></h2>
+<p>Have questions or want to schedule a consultation? Contact Sri Palaniyandavar Physiotherapy Clinic.</p>
+<div class="contact-line"><i class="fa-solid fa-phone"></i><div><small>Phone / WhatsApp</small><strong>+91 97865 28919</strong></div></div>
+<div class="contact-line"><i class="fa-solid fa-location-dot"></i><div><small>Clinic Address</small><strong>Your Clinic Address, Tamil Nadu</strong></div></div>
+<div class="contact-line"><i class="fa-solid fa-clock"></i><div><small>Clinic Hours</small><strong>Monday – Saturday | Add Your Timings</strong></div></div>
+</div>
+
+<form class="appointment-form reveal" id="bookingForm">
+<h3>Book Your Appointment</h3>
+<p>Fill in your details to request an appointment.</p>
+<div class="form-grid">
+<div class="form-group">
+<label for="name">Full Name *</label>
+<input id="name" type="text" placeholder="Enter your name" required maxlength="100">
+</div>
+<div class="form-group">
+<label for="phone">Patient Phone Number *</label>
+<input id="phone" type="tel" placeholder="Enter phone number" required>
+</div>
+<div class="form-group">
+<label for="date">Preferred Date *</label>
+<input id="date" type="date" required>
+</div>
+<div class="form-group">
+<label for="service">Select Service *</label>
+<select id="service" required>
+<option value="">Choose service</option>
+<option>Orthopedic Physiotherapy</option>
+<option>Neurological Rehabilitation</option>
+<option>Sports Physiotherapy</option>
+<option>Geriatric Physiotherapy</option>
+<option>Women's Health Physiotherapy</option>
+<option>Post-Surgical Rehabilitation</option>
+<option>General Consultation</option>
+</select>
+</div>
+<div class="form-group full">
+<label for="message">Describe Your Concern</label>
+<textarea id="message" placeholder="Tell us briefly about your concern..."></textarea>
+</div>
+</div>
+<button class="primary-btn" type="submit"><i class="fa-brands fa-whatsapp"></i> Request Appointment</button>
+</form>
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+<div class="section-heading reveal">
+<div class="eyebrow">PATIENT EXPERIENCE</div>
+<h2>Care That Puts You First.</h2>
+<p>We value every patient's experience and are committed to respectful, personalized physiotherapy care.</p>
+</div>
+<div class="testimonial-grid">
+<div class="testimonial reveal"><div class="stars">★★★★★</div><p>"A welcoming environment and personalized attention make a meaningful difference during rehabilitation."</p><strong>Patient Feedback</strong></div>
+<div class="testimonial reveal"><div class="stars">★★★★★</div><p>"Clear explanations and exercise guidance helped me understand my recovery journey."</p><strong>Patient Feedback</strong></div>
+<div class="testimonial reveal"><div class="stars">★★★★★</div><p>"The focus on individual needs and proper rehabilitation made my clinic experience comfortable."</p><strong>Patient Feedback</strong></div>
+</div>
+<p style="text-align:center;color:#71847d;font-size:11px;margin-top:20px">Replace sample feedback with genuine patient reviews published with permission.</p>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<div class="cta-inner reveal">
+<h2>Let's Make Movement Easier.</h2>
+<p>Your journey towards better mobility and healthier living starts with a conversation.</p>
+<a href="#appointment" class="primary-btn">Schedule a Consultation <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+</section>
+
+<footer id="contact">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-about">
+<div class="logo">
+<div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+<div><h2>Sri Palaniyandavar</h2><small style="color:#65d5b7">PHYSIOTHERAPY CLINIC</small></div>
+</div>
+<p>Personalized physiotherapy and rehabilitation care to help you move better and live healthier.</p>
+<div class="socials">
+<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+</div>
+</div>
+<div><h4>Quick Links</h4><ul>
+<li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Our Services</a></li><li><a href="#why-us">Why Choose Us</a></li><li><a href="#appointment">Appointments</a></li>
+</ul></div>
+<div><h4>Our Services</h4><ul>
+<li>Orthopedic Therapy</li><li>Neuro Rehabilitation</li><li>Sports Physiotherapy</li><li>Geriatric Therapy</li><li>Post-Surgical Rehab</li>
+</ul></div>
+<div><h4>Contact Us</h4><ul>
+<li><a href="tel:+919786528919">+91 97865 28919</a></li>
+<li>Tamil Nadu, India</li>
+<li>Contact us for clinic details</li>
+</ul></div>
+</div>
+<div class="copyright">© <span id="year"></span> Sri Palaniyandavar Physiotherapy Clinic. All Rights Reserved.</div>
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919786528919" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+// MOBILE NAVIGATION
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  menuToggle.innerHTML = navLinks.classList.contains("active")
+    ? '<i class="fa-solid fa-xmark"></i>'
+    : '<i class="fa-solid fa-bars"></i>';
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  });
+});
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+// YEAR
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// PREVENT PAST APPOINTMENT DATES
+const dateInput = document.getElementById("date");
+const today = new Date();
+dateInput.min = new Date(
+  today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+
+// CLINIC WHATSAPP NUMBER
+// Country code included, without + or spaces.
+const CLINIC_WHATSAPP = "919786528919";
+
+// APPOINTMENT FORM
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const date = document.getElementById("date").value;
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("message").value.trim();
+
+  if (!/^[0-9+\-\s()]{7,18}$/.test(phone)) {
+    alert("Please enter a valid phone number.");
+    return;
+  }
+
+  const appointmentMessage =
+`Hello Sri Palaniyandavar Physiotherapy Clinic,
+
+I would like to request an appointment.
+
+Patient Name: ${name}
+Patient Phone: ${phone}
+Preferred Date: ${date}
+Service: ${service}
+Concern: ${message || "Not specified"}
+
+Please contact me to confirm the appointment.
+
+Thank you.`;
+
+  const whatsappURL =
+    "https://wa.me/" + CLINIC_WHATSAPP +
+    "?text=" + encodeURIComponent(appointmentMessage);
+
+  window.open(whatsappURL, "_blank", "noopener");
+});
+</script>
+
+</body>
+</html>
